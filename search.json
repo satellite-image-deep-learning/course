@@ -1,30 +1,58 @@
 [
   {
-    "objectID": "ch1.html",
-    "href": "ch1.html",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Deep learning with satellite & aerial imagery",
+    "section": "",
+    "text": "Welcome to this course on deep learning techniques on satellite & aerial imagery. The goal of this course is to take a reader from basic deep learning techniques (classification, object detection etc) all the way to more advanced techniques such as cloud removal and data fusion. However each chapter is self contained, so you can pick and choose which chapters you want to read.\n\n\nBy making this course open source the aim to attract contributions from the top experts in the field, and ensure the course is continually maintained and improved over time. If you would like to contribute please see the Discussions tab on the Github repository.\n\n\n\nList significant contributors here."
+  },
+  {
+    "objectID": "03-segmentation.html",
+    "href": "03-segmentation.html",
+    "title": "Intro Segmentation",
+    "section": "",
+    "text": "Open In Colab"
+  },
+  {
+    "objectID": "03-segmentation.html#intro-to-segmentation",
+    "href": "03-segmentation.html#intro-to-segmentation",
+    "title": "Intro Segmentation",
+    "section": "Intro to segmentation",
+    "text": "Intro to segmentation\nBla\n\n\nCode\nimport numpy as np"
+  },
+  {
+    "objectID": "02-classification.html",
+    "href": "02-classification.html",
     "title": "Image classification",
     "section": "",
     "text": "Open In Colab"
   },
   {
-    "objectID": "ch1.html#image-classification",
-    "href": "ch1.html#image-classification",
+    "objectID": "02-classification.html#image-classification",
+    "href": "02-classification.html#image-classification",
     "title": "Image classification",
     "section": "Image classification",
-    "text": "Image classification\nBla\n\n\nCode\nimport numpy as np"
+    "text": "Image classification\nYou may already be familiar with image classification from seeing the numerous cats vs dogs image classification tutorials on the internet. Image classification is therefore the task of assigning one (or more) labels to an entire image. When applied to satellite imagery, single label classification has two common uses:\n\nlabel the dominant subject of image, e.g. golf course, harbour\nperform binary detection of some subject, e.g. ship present or not\n\nThere are also more advanced classification techniques, for example using a time-series of images to classify crops where the unique seasonal changes are a strong indicator of crop type."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "02-classification.html#image-classification-datasets",
+    "href": "02-classification.html#image-classification-datasets",
+    "title": "Image classification",
+    "section": "Image classification datasets",
+    "text": "Image classification datasets\nTo get more familiar with satellite image classification I recommend exploring a couple of benchmark datasets. A benchmark dataset is a dataset that is used as a standard by the community to compare the performance of different techniques. Two good benchmark datasets are the UC Merced dataset (a sample of which is shown below) or the EuroSAT dataset. Both of these datasets are available in the standard RGB/single label format, but also in more interesting multi-class versions.\n\n\n\nUC Merced"
+  },
+  {
+    "objectID": "02-classification.html#selecting-training-models",
+    "href": "02-classification.html#selecting-training-models",
+    "title": "Image classification",
+    "section": "Selecting & training models",
+    "text": "Selecting & training models\nIt is relatively rare to train a model from scratch on a custom dataset, and far more common to use a model that has been pre-trained on a benchmark dataset (usually ImageNet) and then fine-tune this model on the custom dataset. To learn more about fine-tuning read the fine-tuning lesson on d2l.ai. In fine-tuning the feature extraction layers are frozen, and only the fully connected classification layers are updated:\n\n\nCode\nimport numpy as np\n\n\n\n\nCode\nnp.random.random()\n\n\n0.6119543114895701"
+  },
+  {
+    "objectID": "01-intro.html",
+    "href": "01-intro.html",
     "title": "Deep learning with satellite & aerial imagery",
     "section": "",
-    "text": "A course on deep learning techniques on satellite & aerial imagery. This book consists of a series of Python-based Jupyter notebooks which can be executed on Google Colab\n\n\n\n\n\n\nThis book uses the Quarto publishing system.\n\n\n\n\n\nThe book can be viewed online or downloaded as notebooks or a PDF.\n\nTo read Python notebooks locally, git clone this repository and open in VScode\n\n\n\n\nList significant contributors here."
-  },
-  {
-    "objectID": "ch2.html",
-    "href": "ch2.html",
-    "title": "Intro Segmentation",
-    "section": "",
-    "text": "Bla\n\n\nCode\nimport numpy as np"
+    "text": "Give a motivation for applying machine learning to satellite & aerial imagery. This could include:\n\nThe large amount of imagery being generated\nThe need for rapid analysis of imagery, e.g. in disaster response scenario\nThe need for automated analysis of imagery, e.g. in the case of large scale crop monitoring\n\n\n\nMachine learning is an approach in which models are trained to find patterns in data. Machine learning techniques have long been applied to satellite & aerial imagery. Examples include the use of clustering techniques to identify crop types. Etc\n\n\n\nDeep learning techniques for vision came to prominence in 2012 when AlexNet won the ImageNet Large Scale Visual Recognition Challenge (ILSVRC). AlexNet is a convolutional neural network (CNN), and in the years since then CNN based neural network techniques have been applied to a wide range of vision tasks including object detection, semantic segmentation, image captioning.\nDiagram of a CNN\n\n\n\nCompared to working with regular images found on the interet, working with satellite & aerial imagery presents a number of unique challenges. These include:\n\nLarge images\nMany channels\nUnusual orientation of objects\nLarge range of object sizes\nNon standard file formats\nWide range of imaging modalities including SAR, multispectral, hyperspectral, thermal, etc"
   }
 ]
