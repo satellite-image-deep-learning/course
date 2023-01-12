@@ -1,8 +1,8 @@
 [
   {
-    "objectID": "ch1.html",
-    "href": "ch1.html",
-    "title": "Intro classification",
+    "objectID": "ch2.html",
+    "href": "ch2.html",
+    "title": "Intro Segmentation",
     "section": "",
     "text": "Bla\n\n\nCode\nimport numpy as np"
   },
@@ -11,13 +11,20 @@
     "href": "index.html",
     "title": "Deep learning with satellite & aerial imagery",
     "section": "",
-    "text": "A course on deep learning techniques on satellite & aerial imagery. This book consists of a series of Python-based Jupyter notebooks which can be executed on Google Colab\n\n\n\n\n\n\nThis book uses the Quarto publishing system.\n\n\n\n\n\nThe book can be viewed online or downloaded as notebooks or a PDF.\n\nTo read Python notebooks locally, git clone this repository.\n\n\n\n\nList significant contributors here."
+    "text": "A course on deep learning techniques on satellite & aerial imagery. This book consists of a series of Python-based Jupyter notebooks which can be executed on Google Colab\n\n\n\n\n\n\nThis book uses the Quarto publishing system.\n\n\n\n\n\nThe book can be viewed online or downloaded as notebooks or a PDF.\n\nTo read Python notebooks locally, git clone this repository and open in VScode\n\n\n\n\nList significant contributors here."
   },
   {
-    "objectID": "ch2.html",
-    "href": "ch2.html",
-    "title": "Intro Segmentation",
+    "objectID": "ch1.html",
+    "href": "ch1.html",
+    "title": "Image classification",
     "section": "",
-    "text": "Bla\n\n\nCode\nimport numpy as np"
+    "text": "Open In Colab"
+  },
+  {
+    "objectID": "ch1.html#image-classification",
+    "href": "ch1.html#image-classification",
+    "title": "Image classification",
+    "section": "Image classification",
+    "text": "Image classification\nBla\n\n\nCode\nimport numpy as np"
   }
 ]
