@@ -18,7 +18,7 @@
     "href": "03-segmentation.html#intro-to-segmentation",
     "title": "Intro Segmentation",
     "section": "Intro to segmentation",
-    "text": "Intro to segmentation\nBla\n\n\nCode\nimport numpy as np"
+    "text": "Intro to segmentation\nBla\n\nimport numpy as np"
   },
   {
     "objectID": "02-classification.html",
@@ -32,21 +32,21 @@
     "href": "02-classification.html#image-classification",
     "title": "Image classification",
     "section": "Image classification",
-    "text": "Image classification\nYou may already be familiar with image classification from seeing the numerous cats vs dogs image classification tutorials on the internet. Image classification is therefore the task of assigning one (or more) labels to an entire image. When applied to satellite imagery, single label classification has two common uses:\n\nlabel the dominant subject of image, e.g. golf course, harbour\nperform binary detection of some subject, e.g. ship present or not\n\nThere are also more advanced classification techniques, for example using a time-series of images to classify crops where the unique seasonal changes are a strong indicator of crop type."
+    "text": "Image classification\nYou may already be familiar with image classification from seeing the numerous cats vs dogs image classification tutorials on the internet. Image classification is therefore the task of assigning one (or more) labels to an entire image. When applied to satellite imagery, classification has two common uses:\n\nlabel the subject of image, e.g. golf course, harbour\nperform detection of some subject, e.g. ship present or not\n\nThere are also more advanced classification techniques, for example using a time-series of images to classify crops where the unique seasonal changes are a strong indicator of crop type."
   },
   {
     "objectID": "02-classification.html#image-classification-datasets",
     "href": "02-classification.html#image-classification-datasets",
     "title": "Image classification",
     "section": "Image classification datasets",
-    "text": "Image classification datasets\nTo get more familiar with satellite image classification I recommend exploring a couple of benchmark datasets. A benchmark dataset is a dataset that is used as a standard by the community to compare the performance of different techniques. Two good benchmark datasets are the UC Merced dataset (a sample of which is shown below) or the EuroSAT dataset. Both of these datasets are available in the standard RGB/single label format, but also in more interesting multi-class versions.\n\n\n\nUC Merced"
+    "text": "Image classification datasets\nTo get more familiar with satellite image classification start by exploring a couple of benchmark datasets. A benchmark dataset is a dataset that is used as a standard by the community to compare the performance of different techniques. Two good benchmark datasets are the UC Merced dataset (a sample of which is shown below) or the EuroSAT dataset. Both of these datasets are available in the standard RGB/single label format, but also in more interesting multi-class versions.\n\n\n\nUC Merced\n\n\n\nEuroSAT\nLets now view the EuroSAT dataset which is available in Torchvision\n\nimport ssl\nssl._create_default_https_context = ssl._create_unverified_context # Issue https://github.com/pytorch/vision/issues/5039\n\nimport numpy as np\nimport torch\nfrom torchvision import datasets, utils, transforms\nimport torchvision.transforms.functional as F\n\ndataset = datasets.EuroSAT(\n    root=\"/tmp\",\n    transform=transforms.ToTensor(),\n    download=True\n)\n\n\ndataset\n\nDataset EuroSAT\n    Number of datapoints: 27000\n    Root location: /tmp\n    StandardTransform\nTransform: ToTensor()\n\n\nWe can access single images from the dataset:\n\nimg, label = dataset[0]\nimg.size\n\n<function Tensor.size>\n\n\n\nimport matplotlib.pyplot as plt\n\nfig, ax = plt.subplots()\nax.imshow(F.to_pil_image(img))\nax.set_title(label)\n\nText(0.5, 1.0, '0')\n\n\n\n\n\nTo create batches of images (as is typical when training models) we must create a dataloader from the dataset\n\ndata_loader = torch.utils.data.DataLoader(dataset, batch_size=4)\n\nYield a batch and visualise\n\nx, y = next(iter(data_loader))\n\n\ndef show(imgs):\n    if not isinstance(imgs, list):\n        imgs = [imgs]\n    fig, axs = plt.subplots(ncols=len(imgs), squeeze=False)\n    for i, img in enumerate(imgs):\n        img = img.detach()\n        img = F.to_pil_image(img)\n        axs[0, i].imshow(np.asarray(img))\n        axs[0, i].set(xticklabels=[], yticklabels=[], xticks=[], yticks=[])\n\nshow(utils.make_grid(x))"
   },
   {
     "objectID": "02-classification.html#selecting-training-models",
     "href": "02-classification.html#selecting-training-models",
     "title": "Image classification",
     "section": "Selecting & training models",
-    "text": "Selecting & training models\nIt is relatively rare to train a model from scratch on a custom dataset, and far more common to use a model that has been pre-trained on a benchmark dataset (usually ImageNet) and then fine-tune this model on the custom dataset. To learn more about fine-tuning read the fine-tuning lesson on d2l.ai. In fine-tuning the feature extraction layers are frozen, and only the fully connected classification layers are updated:\n\n\nCode\nimport numpy as np\n\n\n\n\nCode\nnp.random.random()\n\n\n0.6119543114895701"
+    "text": "Selecting & training models\nIt is relatively rare to train a model from scratch on a custom dataset, and far more common to use a model that has been pre-trained on a benchmark dataset (usually ImageNet) and then fine-tune this model on the custom dataset. To learn more about fine-tuning read the fine-tuning lesson on d2l.ai. In fine-tuning the feature extraction layers are frozen, and only the fully connected classification layers are updated:"
   },
   {
     "objectID": "01-intro.html",
