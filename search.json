@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "ch1.html",
+    "href": "ch1.html",
+    "title": "Intro classification",
+    "section": "",
+    "text": "Bla\n\n\nCode\nimport numpy as np"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Deep learning with satellite & aerial imagery",
+    "section": "",
+    "text": "A course on deep learning techniques on satellite & aerial imagery. This book consists of a series of Python-based Jupyter notebooks which can be executed on Google Colab\n\n\n\n\n\n\nThis book uses the Quarto publishing system.\n\n\n\n\n\nThe book can be viewed online or downloaded as notebooks or a PDF.\n\nTo read Python notebooks locally, git clone this repository.\n\n\n\n\nList significant contributors here."
+  },
+  {
+    "objectID": "ch2.html",
+    "href": "ch2.html",
+    "title": "Intro Segmentation",
+    "section": "",
+    "text": "Bla\n\n\nCode\nimport numpy as np"
+  }
+]

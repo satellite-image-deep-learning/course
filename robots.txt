@@ -1,0 +1,1 @@
+Sitemap: https://github.com/satellite-image-deep-learning/course/sitemap.xml
