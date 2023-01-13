@@ -35,10 +35,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -83,7 +85,8 @@ ul.task-list li input[type="checkbox"] {
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
-      <div class="sidebar-tools-main">
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://www.satellite-image-deep-learning.com/" title="" class="sidebar-tool px-1"><i class="bi bi-display"></i></a>
     <a href="" title="" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-github"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
@@ -97,6 +100,8 @@ ul.task-list li input[type="checkbox"] {
           </a>
         </li>
     </ul>
+    <a href="https://www.youtube.com/playlist?list=PLHifi5Wnkifd5ZndO2ichD_7nnB26eDBj" title="" class="sidebar-tool px-1"><i class="bi bi-youtube"></i></a>
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div>
       <div class="mt-2 flex-shrink-0 align-items-center">
@@ -111,21 +116,46 @@ ul.task-list li input[type="checkbox"] {
   <a href="./welcome.html" class="sidebar-item-text sidebar-link">Welcome</a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Basics</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./introduction.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./classification.html" class="sidebar-item-text sidebar-link">Classification</a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./segmentation.html" class="sidebar-item-text sidebar-link active">Segmentation</a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Advanced</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-fusion.html" class="sidebar-item-text sidebar-link">Data fusion</a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -138,6 +168,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="segmentation" class="level1">
 <h1>Segmentation</h1>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/0I1TOOGfdZ0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <p>Segmentation is a technique which assigns a single label to <em>each pixel</em> in an image, allowing the identification of regions of an image that contain the same target class, and the boundaries between regions. Specifically this technique is often referred to as <em>semantic</em> segmentation, in orer to distinguish it from <em>instance segmentation</em> and <em>panoptic segmentation</em>, which are specialist techniques I will discuss later in this post. However when people say ‘segmentation’ they are usually referring to semantic segmentation, so I will drop the use of ‘semantic’ and just refer to ‘segmentation’. Since an image is worth a thousand words, I refer to the image below which shows an image which has been manually annotated[^1] as training data for a (semantic) segmentation model. In this image each colour represents a single class, and all pixels in the image are assigned a class:</p>
 <p align="center">
 <img src="images/segmentation/seg-main.png" width="400">
@@ -192,10 +223,6 @@ ul.task-list li input[type="checkbox"] {
 <p>For your first project I will assume you are working on a custom dataset that you will create. You should first consider which of the segmentation techniques you require, but if in doubt try semantic segmentation first since this requires the least annotation time. A good first project should focus on the simplest case of binary segmentation (i.e.&nbsp;of a target class vs background) as this will minimise annotation time. Aim to create a dataset of images where there is a good balance of the target to background in the images, in order to avoid working with a highly imbalanced dataset. If your target class is easily distinguished from background then this is likely to be a relatively straightforward problem and you could begin experiments with a smaller training dataset of say 50-75 images. Note that annotation quality is very important, particularly with smaller datasets, so take the time to perform accurate annotations. Annotating every pixel in an image is very time consuming, and it is more common to perform annotation with polygons. There are however many annotation platforms that provide a ‘smart assist’ to speed up annotation. These often use a region growing algorithm to allow pixel level annotation using only a few points as input from the annotator. One annotation platform I am familiar with that offers this kind of functionality is <a href="https://roboflow.com/robincole">Roboflow</a>. You could also create your own polygon annotation tool using Streamlit, and <a href="https://github.com/robmarkcole/streamlit-segmentation-app">I did this recently</a> since I discovered a heuristic (thresholding in my case) that worked particularly well for outlining the target class I was annotating.</p>
 <p>Once you have your dataset, create train, validation and a holdout test set, and begin training experiments using a Unet. As I mentioned earlier I will often used fastai for this initial training, and the goal is to establish a baseline performance you can achieve. It is important to evaluate not just your chosen metric (e.g.&nbsp;IOU[^4]) but also visualise predictions from the model. You may find that poor metrics are actually a result of poor &amp; inaccurate annotation, and this can be used to refine your annotation approach. Once you have established a credible baseline performance, begin experiments with model type, data augmentation and hyperparameter tuning. However you should also be regularly evaluating where your model is performing poorly, and adding more training examples for these cases. Once you have achieved satisfactory peformance you could then consider post processing of the model outputs, for example to generate polygon outlines of buildings or roads that can then be displayed in a GIS system. For further inspiration see the <a href="https://github.com/robmarkcole/satellite-image-deep-learning#Segmentation">Segmentation</a> section of my repository.</p>
 </section>
-<section id="video" class="level2">
-<h2 class="anchored" data-anchor-id="video">Video</h2>
-<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/0I1TOOGfdZ0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</section>
 <section id="exercise-notebook" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-notebook">Exercise notebook</h2>
 <p>The exercise notebook for this lesson is available to <a href="https://colab.research.google.com/github/satellite-image-deep-learning/course/blob/main/notebooks/segmentation.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open In Colab"></a></p>
@@ -225,6 +252,121 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
