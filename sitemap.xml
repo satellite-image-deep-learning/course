@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/satellite-image-deep-learning/course/00-welcome.html</loc>
-    <lastmod>2023-01-13T10:37:51.480Z</lastmod>
+    <loc>https://github.com/satellite-image-deep-learning/course/classification.html</loc>
+    <lastmod>2023-01-13T12:04:13.377Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/satellite-image-deep-learning/course/03-segmentation.html</loc>
-    <lastmod>2023-01-13T10:37:52.080Z</lastmod>
+    <loc>https://github.com/satellite-image-deep-learning/course/introduction.html</loc>
+    <lastmod>2023-01-13T12:04:14.169Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/satellite-image-deep-learning/course/notebooks/03-segmentation.html</loc>
-    <lastmod>2023-01-13T10:37:52.380Z</lastmod>
+    <loc>https://github.com/satellite-image-deep-learning/course/notebooks/segmentation.html</loc>
+    <lastmod>2023-01-13T12:04:14.577Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/satellite-image-deep-learning/course/notebooks/02-classification.html</loc>
-    <lastmod>2023-01-13T10:37:52.704Z</lastmod>
+    <loc>https://github.com/satellite-image-deep-learning/course/notebooks/classification.html</loc>
+    <lastmod>2023-01-13T12:04:14.957Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/satellite-image-deep-learning/course/02-classification.html</loc>
-    <lastmod>2023-01-13T10:37:53.000Z</lastmod>
+    <loc>https://github.com/satellite-image-deep-learning/course/segmentation.html</loc>
+    <lastmod>2023-01-13T12:04:15.269Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/satellite-image-deep-learning/course/01-introduction.html</loc>
-    <lastmod>2023-01-13T10:37:53.272Z</lastmod>
+    <loc>https://github.com/satellite-image-deep-learning/course/welcome.html</loc>
+    <lastmod>2023-01-13T12:04:15.621Z</lastmod>
   </url>
 </urlset>

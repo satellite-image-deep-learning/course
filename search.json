@@ -1,79 +1,86 @@
 [
   {
-    "objectID": "00-welcome.html",
-    "href": "00-welcome.html",
-    "title": "Deep learning with satellite & aerial imagery",
-    "section": "",
-    "text": "Welcome to this course on deep learning techniques on satellite & aerial imagery. The goal of this course is to take a reader from basic deep learning techniques (classification, object detection etc) all the way to more advanced techniques such as cloud removal and data fusion. However each chapter is self contained, so you can pick and choose which chapters you want to read.\n\n\nBy making this course open source the aim to attract contributions from the top experts in the field, and ensure the course is continually maintained and improved over time. If you would like to contribute please see the Discussions tab on the Github repository.\n\n\n\nList significant contributors here."
-  },
-  {
-    "objectID": "03-segmentation.html",
-    "href": "03-segmentation.html",
-    "title": "Deep learning with satellite & aerial imagery",
-    "section": "",
-    "text": "Segmentation"
-  },
-  {
-    "objectID": "notebooks/03-segmentation.html",
-    "href": "notebooks/03-segmentation.html",
-    "title": "Intro Segmentation",
-    "section": "",
-    "text": "Open In Colab"
-  },
-  {
-    "objectID": "notebooks/03-segmentation.html#intro-to-segmentation",
-    "href": "notebooks/03-segmentation.html#intro-to-segmentation",
-    "title": "Intro Segmentation",
-    "section": "Intro to segmentation",
-    "text": "Intro to segmentation\nBla\n\nimport numpy as np"
-  },
-  {
-    "objectID": "notebooks/02-classification.html",
-    "href": "notebooks/02-classification.html",
-    "title": "Deep learning with satellite & aerial imagery",
-    "section": "",
-    "text": "Open In Colab\n\n\n\nimport ssl\nssl._create_default_https_context = ssl._create_unverified_context # Issue https://github.com/pytorch/vision/issues/5039\n\nimport numpy as np\nimport torch\nimport torch.nn as nn\nimport torch.optim as optim\nfrom torch.optim import lr_scheduler\nfrom torchvision import datasets, utils, transforms, models\nimport torchvision.transforms.functional as F\n\nimport time\nimport os\nimport copy\n\ndataset = datasets.EuroSAT(\n    root=\"/tmp\",\n    transform=transforms.ToTensor(),\n    download=True\n)\n\n\ndataset\n\nDataset EuroSAT\n    Number of datapoints: 27000\n    Root location: /tmp\n    StandardTransform\nTransform: ToTensor()\n\n\nWe can access single images from the dataset, and see it is a 3 channel (RGB) image of shape 64 x 64 pixels. Labels are encoded as integers:\n\nimg, label = dataset[0]\nimg.size(), label\n\n(torch.Size([3, 64, 64]), 0)\n\n\nVisualise the single image\n\nimport matplotlib.pyplot as plt\n\nfig, ax = plt.subplots()\nax.imshow(F.to_pil_image(img))\nax.set_title(label)\n\nText(0.5, 1.0, '0')\n\n\n\n\n\nTo create batches of images (as is typical when training models) we must first create a dataloader from the dataset:\n\ndata_loader = torch.utils.data.DataLoader(dataset, batch_size=4)\n\nReturn the first batch of images and visualise\n\nx, y = next(iter(data_loader))\n\n\ndef show(imgs):\n    if not isinstance(imgs, list):\n        imgs = [imgs]\n    fig, axs = plt.subplots(ncols=len(imgs), squeeze=False)\n    for i, img in enumerate(imgs):\n        img = img.detach()\n        img = F.to_pil_image(img)\n        axs[0, i].imshow(np.asarray(img))\n        axs[0, i].set(xticklabels=[], yticklabels=[], xticks=[], yticks=[])\n\nshow(utils.make_grid(x))"
-  },
-  {
-    "objectID": "02-classification.html",
-    "href": "02-classification.html",
+    "objectID": "classification.html",
+    "href": "classification.html",
     "title": "Deep learning with satellite & aerial imagery",
     "section": "",
     "text": "You may already be familiar with image classification from seeing the numerous cats vs dogs image classification tutorials on the internet. Image classification is therefore the task of assigning one (or more) labels to an entire image. When applied to satellite imagery, classification has two common uses:\n\nlabel the subject of image, e.g. golf course, harbour\nperform detection of some subject, e.g. ship present or not\n\nThere are also more advanced classification techniques, for example using a time-series of images to classify crops where the unique seasonal changes are a strong indicator of crop type."
   },
   {
-    "objectID": "02-classification.html#image-classification-datasets",
-    "href": "02-classification.html#image-classification-datasets",
+    "objectID": "classification.html#image-classification-datasets",
+    "href": "classification.html#image-classification-datasets",
     "title": "Deep learning with satellite & aerial imagery",
     "section": "Image classification datasets",
     "text": "Image classification datasets\nTo get more familiar with satellite image classification start by exploring a couple of benchmark datasets. A benchmark dataset is a dataset that is used as a standard by the community to compare the performance of different techniques. Two good benchmark datasets are the UC Merced dataset (a sample of which is shown below) or the EuroSAT dataset. Both of these datasets are available in the standard RGB/single label format, but also in more interesting multi-class versions."
   },
   {
-    "objectID": "02-classification.html#fine-tuning-models",
-    "href": "02-classification.html#fine-tuning-models",
+    "objectID": "classification.html#fine-tuning-models",
+    "href": "classification.html#fine-tuning-models",
     "title": "Deep learning with satellite & aerial imagery",
     "section": "Fine tuning models",
     "text": "Fine tuning models\nIt is relatively rare to train a model from scratch on a custom dataset, and far more common to use a model that has been pre-trained on a benchmark dataset (usually ImageNet) and then fine-tune this model on the custom dataset. To learn more about fine-tuning read the fine-tuning lesson on d2l.ai. In fine-tuning the feature extraction layers are frozen, and only the fully connected classification layers are updated:"
   },
   {
-    "objectID": "02-classification.html#sota-models",
-    "href": "02-classification.html#sota-models",
+    "objectID": "classification.html#sota-models",
+    "href": "classification.html#sota-models",
     "title": "Deep learning with satellite & aerial imagery",
     "section": "SOTA models",
     "text": "SOTA models\nThe internet regularly reports new ‘state of the art’ (SOTA) models which improve performance on some benchmark dataset or other, and it would be reasonable to assume that the latest and greatest models are usually used in applications. In the article The best vision models for fine-tuning author Jeremy Howard compares 86 classification models on two benchmark datasets; the IIT Pet dataset and the Kaggle Planet dataset (a remote sensing dataset). Jeremy shows that the modern models are the top performers in terms of accuracy, shown in the table below:\n\n\n\nInterestingly the best performers vary between the Pets and Planet datasets, and Jeremy attributes this to the fact that the Planet dataset does not resemble the images in the ImageNet dataset (which most models are pre-trained on), so the models which learn new features the fastest are the best performers. He also notes that “there’s little correlation between model size and performance” on the Planet dataset, and therefore advises selecting smaller models (which will also be faster in use). An additional advantage of choosing a small model is that the pace of experimentation is faster. A surprising result on the Planet dataset is that the relatively old (2015) Resnet 18 model is in the top 10 performers. As Jeremy says, “Resnet 18 has very low memory use, is fast, and is still quite accurate”, and for these reasons I suggest it is a good default model to begin projects with."
   },
   {
-    "objectID": "02-classification.html#exercise-notebook",
-    "href": "02-classification.html#exercise-notebook",
+    "objectID": "classification.html#exercise-notebook",
+    "href": "classification.html#exercise-notebook",
     "title": "Deep learning with satellite & aerial imagery",
     "section": "Exercise notebook",
     "text": "Exercise notebook\nThe exercise notebook for this lesson is available to"
   },
   {
-    "objectID": "01-introduction.html",
-    "href": "01-introduction.html",
+    "objectID": "introduction.html",
+    "href": "introduction.html",
     "title": "Deep learning with satellite & aerial imagery",
     "section": "",
     "text": "Give a motivation for applying machine learning to satellite & aerial imagery. This could include:\n\nThe large amount of imagery being generated\nThe need for rapid analysis of imagery, e.g. in disaster response scenario\nThe need for automated analysis of imagery, e.g. in the case of large scale crop monitoring\n\n\n\nMachine learning is an approach in which models are trained to find patterns in data. Machine learning techniques have long been applied to satellite & aerial imagery. Examples include the use of clustering techniques to identify crop types. Etc\n\n\n\nDeep learning techniques for vision came to prominence in 2012 when AlexNet won the ImageNet Large Scale Visual Recognition Challenge (ILSVRC). AlexNet is a convolutional neural network (CNN), and in the years since then CNN based neural network techniques have been applied to a wide range of vision tasks including object detection, semantic segmentation, image captioning.\nDiagram of a CNN\n\n\n\nCompared to working with regular images found on the interet, working with satellite & aerial imagery presents a number of unique challenges. These include:\n\nLarge images\nMany channels\nUnusual orientation of objects\nLarge range of object sizes\nNon standard file formats\nWide range of imaging modalities including SAR, multispectral, hyperspectral, thermal, etc"
+  },
+  {
+    "objectID": "notebooks/segmentation.html",
+    "href": "notebooks/segmentation.html",
+    "title": "Intro Segmentation",
+    "section": "",
+    "text": "Open In Colab"
+  },
+  {
+    "objectID": "notebooks/segmentation.html#intro-to-segmentation",
+    "href": "notebooks/segmentation.html#intro-to-segmentation",
+    "title": "Intro Segmentation",
+    "section": "Intro to segmentation",
+    "text": "Intro to segmentation\nBla\n\nimport numpy as np"
+  },
+  {
+    "objectID": "notebooks/classification.html",
+    "href": "notebooks/classification.html",
+    "title": "Deep learning with satellite & aerial imagery",
+    "section": "",
+    "text": "Open In Colab\n\n\n\nimport ssl\nssl._create_default_https_context = ssl._create_unverified_context # Issue https://github.com/pytorch/vision/issues/5039\n\nimport numpy as np\nimport torch\nimport torch.nn as nn\nimport torch.optim as optim\nfrom torch.optim import lr_scheduler\nfrom torchvision import datasets, utils, transforms, models\nimport torchvision.transforms.functional as F\n\nimport time\nimport os\nimport copy\n\ndataset = datasets.EuroSAT(\n    root=\"/tmp\",\n    transform=transforms.ToTensor(),\n    download=True\n)\n\n\ndataset\n\nDataset EuroSAT\n    Number of datapoints: 27000\n    Root location: /tmp\n    StandardTransform\nTransform: ToTensor()\n\n\nWe can access single images from the dataset, and see it is a 3 channel (RGB) image of shape 64 x 64 pixels. Labels are encoded as integers:\n\nimg, label = dataset[0]\nimg.size(), label\n\n(torch.Size([3, 64, 64]), 0)\n\n\nVisualise the single image\n\nimport matplotlib.pyplot as plt\n\nfig, ax = plt.subplots()\nax.imshow(F.to_pil_image(img))\nax.set_title(label)\n\nText(0.5, 1.0, '0')\n\n\n\n\n\nTo create batches of images (as is typical when training models) we must first create a dataloader from the dataset:\n\ndata_loader = torch.utils.data.DataLoader(dataset, batch_size=4)\n\nReturn the first batch of images and visualise\n\nx, y = next(iter(data_loader))\n\n\ndef show(imgs):\n    if not isinstance(imgs, list):\n        imgs = [imgs]\n    fig, axs = plt.subplots(ncols=len(imgs), squeeze=False)\n    for i, img in enumerate(imgs):\n        img = img.detach()\n        img = F.to_pil_image(img)\n        axs[0, i].imshow(np.asarray(img))\n        axs[0, i].set(xticklabels=[], yticklabels=[], xticks=[], yticks=[])\n\nshow(utils.make_grid(x))"
+  },
+  {
+    "objectID": "segmentation.html",
+    "href": "segmentation.html",
+    "title": "Deep learning with satellite & aerial imagery",
+    "section": "",
+    "text": "Segmentation"
+  },
+  {
+    "objectID": "welcome.html#contribute",
+    "href": "welcome.html#contribute",
+    "title": "Deep learning with satellite & aerial imagery",
+    "section": "Contribute",
+    "text": "Contribute\nBy making this course open source the aim to attract contributions from the top experts in the field, and ensure the course is continually maintained and improved over time. If you would like to contribute please see the Discussions tab on the Github repository."
+  },
+  {
+    "objectID": "welcome.html#credits",
+    "href": "welcome.html#credits",
+    "title": "Deep learning with satellite & aerial imagery",
+    "section": "Credits",
+    "text": "Credits\nList significant contributors here."
   }
 ]
