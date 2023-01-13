@@ -2,18 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/index.html</loc>
-    <lastmod>2023-01-12T16:33:17.554Z</lastmod>
+    <lastmod>2023-01-13T10:06:05.775Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/03-segmentation.html</loc>
-    <lastmod>2023-01-12T16:33:18.218Z</lastmod>
+    <lastmod>2023-01-13T10:06:06.399Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/satellite-image-deep-learning/course/01-introduction.html</loc>
+    <lastmod>2023-01-13T10:06:06.695Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/satellite-image-deep-learning/course/notebooks/03-segmentation.html</loc>
+    <lastmod>2023-01-13T10:06:06.995Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/satellite-image-deep-learning/course/notebooks/02-classification.html</loc>
+    <lastmod>2023-01-13T10:06:07.311Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/02-classification.html</loc>
-    <lastmod>2023-01-12T16:33:18.590Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/satellite-image-deep-learning/course/01-intro.html</loc>
-    <lastmod>2023-01-12T16:33:18.870Z</lastmod>
+    <lastmod>2023-01-13T10:06:07.615Z</lastmod>
   </url>
 </urlset>
