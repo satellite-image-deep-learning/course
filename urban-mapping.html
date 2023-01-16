@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Deep learning with satellite &amp; aerial imagery – classification</title>
+<title>Deep learning with satellite &amp; aerial imagery – urban-mapping</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -131,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./classification.html" class="sidebar-item-text sidebar-link active">Classification</a>
+  <a href="./classification.html" class="sidebar-item-text sidebar-link">Classification</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -201,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./urban-mapping.html" class="sidebar-item-text sidebar-link">Urban mapping</a>
+  <a href="./urban-mapping.html" class="sidebar-item-text sidebar-link active">Urban mapping</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -251,37 +251,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="classification" class="level2">
-<h2 class="anchored" data-anchor-id="classification">Classification</h2>
-<p>You may already be familiar with image classification from seeing the numerous cats vs dogs image classification tutorials on the internet. Image classification is therefore the task of assigning one (or more) labels to an entire image. When applied to satellite imagery, classification has two common uses:</p>
+<section id="urban-mapping" class="level1">
+<h1>Urban mapping</h1>
 <ul>
-<li>label the subject of image, e.g.&nbsp;golf course, harbour</li>
-<li>perform detection of some subject, e.g.&nbsp;ship present or not</li>
+<li>Buildings</li>
+<li>Roads</li>
 </ul>
-<p>There are also more advanced classification techniques, for example using a time-series of images to classify crops where the unique seasonal changes are a strong indicator of crop type.</p>
-</section>
-<section id="image-classification-datasets" class="level2">
-<h2 class="anchored" data-anchor-id="image-classification-datasets">Image classification datasets</h2>
-<p>To get more familiar with satellite image classification start by exploring a couple of benchmark datasets. A benchmark dataset is a dataset that is used as a standard by the community to compare the performance of different techniques. Two good benchmark datasets are the UC Merced dataset (a sample of which is shown below) or the EuroSAT dataset. Both of these datasets are available in the standard RGB/single label format, but also in more interesting multi-class versions.</p>
-<p align="center">
-<img src="images/classification/main.png" width="600">
-</p>
-</section>
-<section id="fine-tuning-models" class="level2">
-<h2 class="anchored" data-anchor-id="fine-tuning-models">Fine tuning models</h2>
-<p>It is relatively rare to train a model from scratch on a custom dataset, and far more common to use a model that has been pre-trained on a benchmark dataset (usually ImageNet) and then fine-tune this model on the custom dataset. To learn more about fine-tuning read the <a href="https://d2l.ai/chapter_computer-vision/fine-tuning.html">fine-tuning lesson on d2l.ai</a>. In fine-tuning the feature extraction layers are frozen, and only the fully connected classification layers are updated:</p>
-</section>
-<section id="sota-models" class="level2">
-<h2 class="anchored" data-anchor-id="sota-models">SOTA models</h2>
-<p>The internet regularly reports new ‘state of the art’ (SOTA) models which improve performance on some benchmark dataset or other, and it would be reasonable to assume that the latest and greatest models are usually used in applications. In the article <a href="https://www.kaggle.com/code/jhoward/the-best-vision-models-for-fine-tuning/notebook">The best vision models for fine-tuning</a> author Jeremy Howard compares 86 classification models on two benchmark datasets; the IIT Pet dataset and the Kaggle Planet dataset (a remote sensing dataset). Jeremy shows that the modern models are the top performers in terms of accuracy, shown in the table below:</p>
-<p align="center">
-<img src="images/classification/table.png" width="600">
-</p>
-<p>Interestingly the best performers vary between the Pets and Planet datasets, and Jeremy attributes this to the fact that the Planet dataset does not resemble the images in the ImageNet dataset (which most models are pre-trained on), so the models which learn new features the fastest are the best performers. He also notes that “there’s little correlation between model size and performance” on the Planet dataset, and therefore advises selecting smaller models (which will also be faster in use). An additional advantage of choosing a small model is that the pace of experimentation is faster. A surprising result on the Planet dataset is that the relatively old (2015) Resnet 18 model is in the top 10 performers. As Jeremy says, “Resnet 18 has very low memory use, is fast, and is still quite accurate”, and for these reasons I suggest it is a good default model to begin projects with.</p>
-</section>
-<section id="exercise-notebook" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-notebook">Exercise notebook</h2>
-<p>The exercise notebook for this lesson is available to <a href="https://colab.research.google.com/github/satellite-image-deep-learning/course/blob/main/notebooks/classification.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open In Colab"></a></p>
 
 
 </section>
