@@ -2,82 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/crop-monitoring.html</loc>
-    <lastmod>2023-01-16T14:21:52.013Z</lastmod>
+    <lastmod>2023-01-16T14:28:48.331Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/classification.html</loc>
-    <lastmod>2023-01-16T14:21:54.217Z</lastmod>
+    <lastmod>2023-01-16T14:28:50.416Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/mlops.html</loc>
-    <lastmod>2023-01-16T14:21:54.597Z</lastmod>
+    <lastmod>2023-01-16T14:28:50.768Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/introduction.html</loc>
-    <lastmod>2023-01-16T14:21:55.001Z</lastmod>
+    <lastmod>2023-01-16T14:28:51.116Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/segmentation.html</loc>
-    <lastmod>2023-01-16T14:21:55.529Z</lastmod>
+    <lastmod>2023-01-16T14:28:51.608Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/dataset-preparation.html</loc>
-    <lastmod>2023-01-16T14:21:55.909Z</lastmod>
+    <lastmod>2023-01-16T14:28:51.940Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/regression.html</loc>
-    <lastmod>2023-01-16T14:21:56.273Z</lastmod>
+    <lastmod>2023-01-16T14:28:52.272Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/notebooks/segmentation.html</loc>
-    <lastmod>2023-01-16T14:21:56.689Z</lastmod>
+    <lastmod>2023-01-16T14:28:52.656Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/notebooks/classification.html</loc>
-    <lastmod>2023-01-16T14:21:57.093Z</lastmod>
+    <lastmod>2023-01-16T14:28:53.048Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/hyperspectral.html</loc>
-    <lastmod>2023-01-16T14:21:57.433Z</lastmod>
+    <lastmod>2023-01-16T14:28:53.376Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/sar.html</loc>
-    <lastmod>2023-01-16T14:21:57.797Z</lastmod>
+    <lastmod>2023-01-16T14:28:53.704Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/data-fusion.html</loc>
-    <lastmod>2023-01-16T14:21:58.197Z</lastmod>
+    <lastmod>2023-01-16T14:28:54.052Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/object-detection.html</loc>
-    <lastmod>2023-01-16T14:21:58.549Z</lastmod>
+    <lastmod>2023-01-16T14:28:54.384Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/welcome.html</loc>
-    <lastmod>2023-01-16T14:21:58.941Z</lastmod>
+    <lastmod>2023-01-16T14:28:54.728Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/super-resolution.html</loc>
-    <lastmod>2023-01-16T14:21:59.313Z</lastmod>
+    <lastmod>2023-01-16T14:28:55.088Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/urban-mapping.html</loc>
-    <lastmod>2023-01-16T14:21:59.669Z</lastmod>
+    <lastmod>2023-01-16T14:28:55.420Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/clouds.html</loc>
-    <lastmod>2023-01-16T14:22:00.033Z</lastmod>
+    <lastmod>2023-01-16T14:28:55.752Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/time-series.html</loc>
-    <lastmod>2023-01-16T14:22:00.389Z</lastmod>
+    <lastmod>2023-01-16T14:28:56.108Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/disaster-response.html</loc>
-    <lastmod>2023-01-16T14:22:00.753Z</lastmod>
+    <lastmod>2023-01-16T14:28:56.436Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/satellite-image-deep-learning/course/image-preprocessing.html</loc>
+    <lastmod>2023-01-16T14:28:56.768Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/satellite-image-deep-learning/course/imaging-physics.html</loc>
-    <lastmod>2023-01-16T14:22:01.109Z</lastmod>
+    <lastmod>2023-01-16T14:28:57.112Z</lastmod>
   </url>
 </urlset>
