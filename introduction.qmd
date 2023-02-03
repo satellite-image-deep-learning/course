@@ -1,4 +1,12 @@
 # Introduction
+Deep learning with satellite imagery is a rapidly growing field that combines the power of artificial intelligence with satellite imagery to tackle complex problems. Satellite imagery has become an important source of information for a variety of industries, including agriculture, climate monitoring, and urban planning. Deep learning algorithms can be applied to satellite imagery to perform tasks such as image classification, object detection, and segmentation. In this chapter, we will explore the fundamental concepts of deep learning and its applications in the context of satellite imagery. We will also discuss some of the challenges and limitations of using deep learning with satellite imagery and explore some of the recent advancements in this field.
+
+# What is satellite imagery?
+
+Satellite imagery is a type of aerial imagery that is captured by satellites orbiting the Earth. Satellite imagery is used for a variety of purposes, including monitoring natural disasters, mapping the Earth, and monitoring crop health. Satellite imagery is also used in the field of remote sensing, which is the science of collecting information about an object or area from a distance. Remote sensing is used in a variety of fields, including agriculture, climate monitoring, and urban planning.
+
+
+## What is satellite & aerial imagery?
 Give a motivation for applying machine learning to satellite & aerial imagery. This could include:
 
 - The large amount of imagery being generated
