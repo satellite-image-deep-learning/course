@@ -149,6 +149,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="./object-detection.html" class="sidebar-item-text sidebar-link">Object detection</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./change-detection.html" class="sidebar-item-text sidebar-link active">Change detection</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -259,8 +264,15 @@ ul.task-list li input[type="checkbox"] {
 <section id="change-detection" class="level1">
 <h1>Change detection</h1>
 <p>Change detection is a vital component of remote sensing analysis, enabling the monitoring of landscape changes over time. This technique can be applied to identify a wide range of changes, including land use changes, urban development, coastal erosion, and deforestation. Change detection can be performed on a pair of images taken at different times, or by analyzing multiple images collected over a period of time. It is important to note that while change detection is primarily used to detect changes in the landscape, it can also be influenced by the presence of clouds and shadows. These dynamic elements can alter the appearance of the image, leading to false positives in change detection results.</p>
+<section id="siamese-neural-networks" class="level2">
+<h2 class="anchored" data-anchor-id="siamese-neural-networks">Siamese neural networks</h2>
+<p>A Siamese neural network is a type of neural network architecture that is commonly used for change detection. A Siamese neural network consists of two identical sub-networks, each with its own set of weights and biases, and a comparator function that combines the outputs of the sub-networks to determine the similarity between the two inputs. For change detection, the Siamese network is trained on pairs of images captured at different times over a scene. The comparator function compares the outputs of the two sub-networks to determine the difference between the two input images. The comparison result is then used to identify the changes in the scene.</p>
+<p align="center">
+<img src="images/change-detection/siamese.png" width="600"> <br> <b>Siamese Network for change detection. <a href="https://www.mdpi.com/2072-4292/11/11/1292">Source</a></b>
+</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
