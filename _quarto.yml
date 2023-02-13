@@ -27,6 +27,7 @@ website:
           - regression.qmd
           - segmentation.qmd
           - object-detection.qmd
+          - change-detection.qmd
       - section: "Advanced techniques"
         contents:
           - sar.qmd
